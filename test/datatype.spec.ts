@@ -161,6 +161,12 @@ describe('datatype', () => {
       spy_datatype_number.mockRestore();
     });
 
+    it('should generate a datetime value, checks seeding', () => {
+      faker.seed(100);
+      const generatedDateTime = faker.datatype.datetime();
+      expect(generatedDateTime).toEqual(new Date('2049-10-10T09:07:31.031Z'));
+    });
+
     //generating a datetime with seeding is currently not working
   });
 

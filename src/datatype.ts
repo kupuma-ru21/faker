@@ -109,11 +109,11 @@ export class Datatype {
     options = options || {};
 
     if (typeof options.min === 'undefined' || options.min < minMax * -1) {
-      options.min = new Date().setFullYear(1990, 1, 1);
+      options.min = Date.UTC(1990, 0);
     }
 
     if (typeof options.max === 'undefined' || options.max > minMax) {
-      options.max = new Date().setFullYear(2100, 1, 1);
+      options.max = Date.UTC(2100, 0);
     }
 
     const random = this.faker.datatype.number(options);
